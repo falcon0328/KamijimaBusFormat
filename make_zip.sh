@@ -1,7 +1,4 @@
 #!/bin/bash
-
-# gh-pagesのブランチに切り替える
-git checkout gh-pages
 if [ -e ./output ]; then
     # outputディレクトリに予め存在するzipファイルを削除する
     rm ./output/*.zip
@@ -28,8 +25,8 @@ fi
 # 成果物のzipファイルをGTFSディレクトリにコピー
 cp ./output/*.zip ./GTFS
 # gh-pagesへpush
-git add
+git add ./GTFS
 git commit -m "add GTFS.zip"
-git push origin
+git push origin gh-pages
 # masterブランチに切り替える
 git checkout master
