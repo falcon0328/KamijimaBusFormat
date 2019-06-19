@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# gh-pagesのブランチに切り替える
+git checkout gh-pages
 if [ -e ./output ]; then
     # outputディレクトリに予め存在するzipファイルを削除する
     rm ./output/*.zip
@@ -19,8 +21,6 @@ zip -r `date "+%Y%m%d%H%M%S"`.zip .
 rm *.txt
 # カレントディレクトリを戻す
 cd ..
-# gh-pagesのブランチに切り替える
-git checkout gh-pages
 if [ ! -e ./GTFS ]; then
     # 存在しない場合
     mkdir GTFS
