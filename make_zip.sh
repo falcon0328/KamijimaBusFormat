@@ -27,7 +27,7 @@ if [ -e ./GTFS ]; then
         mkdir ./GTFS/prev
     fi
     # 既存ZIPファイルをprevディレクトリにコピー
-    cp -r ./GTFS/*.zip ./GTFS/prev/
+    cp -r ./GTFS/*.zip ./GTFS/prev/`date "+%Y%m%d%H%M%S"`.zip
     # GTFS直下のzipファイルは削除
     rm ./GTFS/*.zip
 else
@@ -35,7 +35,7 @@ else
     mkdir GTFS
 fi
 # 今回の成果物であるzipファイルをGTFSディレクトリにコピー
-cp ./output/*.zip ./GTFS
+cp ./output/*.zip ./GTFS/latest.zip
 # gh-pagesへpush
 git add ./GTFS
 git commit -m "add GTFS.zip"
