@@ -1,3 +1,7 @@
 route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color,jp_parent_route_id
 KA_TA,事業者ID,,幹線 立石港務所方面行き,,3,,,,
 KA_KU,事業者ID,,幹線 久司浦方面行き,,3,,,,
+YG_EK_1,事業者ID,,江尻・鎌田方面行き1,,3,,,,
+YG_EK_2,事業者ID,,江尻・鎌田方面行き2,,3,,,,
+YG_OK_1,事業者ID,,大谷・狩尾方面行き1,,3,,,,
+YG_OK_2,事業者ID,,大谷・狩尾方面行き2,,3,,,,
