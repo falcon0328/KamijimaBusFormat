@@ -17,3 +17,19 @@ for filename in *.csv; do mv $filename ${filename%.csv}.txt; done
 zip -r `date "+%Y%m%d%H%M%S"`.zip .
 # テキストファイルの一括削除
 rm *.txt
+# カレントディレクトリを戻す
+cd ..
+# gh-pagesのブランチに切り替える
+git checkout gh-pages
+if [ ! -e ./GTFS ]; then
+    # 存在しない場合
+    mkdir GTFS
+fi
+# 成果物のzipファイルをGTFSディレクトリにコピー
+cp ./output/*.zip ./GTFS
+# gh-pagesへpush
+git add
+git commit -m "add GTFS.zip"
+git push origin
+# masterブランチに切り替える
+git checkout master
