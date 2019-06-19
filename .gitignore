@@ -29,4 +29,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# output files
+output
+
 # End of https://www.gitignore.io/api/macos
