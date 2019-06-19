@@ -18,14 +18,26 @@ zip -r `date "+%Y%m%d%H%M%S"`.zip .
 rm *.txt
 # カレントディレクトリを戻す
 cd ..
-if [ ! -e ./GTFS ]; then
+# gh-pagesブランチにチェックアウト
+git checkout gh-pages
+if [ -e ./GTFS ]; then
+    # GTFS内にprevディレクトリがなければ
+    if [ ! -e ./GTFS/prev ]; then
+        # prevディレクトリを作成する
+        mkdir ./GTFS/prev
+    fi
+    # GTFSディレクトリ内にzipファイルが存在すれば
+    if [ -e ./GTFS/*.zip ]; then
+        # prevディレクトリに移動する
+        mv ./GTFS/*.zip ./GTFS/prev/
+    fi
+else
     # 存在しない場合
     mkdir GTFS
 fi
-# 成果物のzipファイルをGTFSディレクトリにコピー
+# 今回の成果物であるzipファイルをGTFSディレクトリにコピー
 cp ./output/*.zip ./GTFS
 # gh-pagesへpush
-git checkout gh-pages
 git add ./GTFS
 git commit -m "add GTFS.zip"
 git push origin gh-pages
