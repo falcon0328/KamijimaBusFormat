@@ -26,11 +26,10 @@ if [ -e ./GTFS ]; then
         # prevディレクトリを作成する
         mkdir ./GTFS/prev
     fi
-    # GTFSディレクトリ内にzipファイルが存在すれば
-    if [ -e ./GTFS/*.zip ]; then
-        # prevディレクトリに移動する
-        mv ./GTFS/*.zip ./GTFS/prev/
-    fi
+    # 既存ZIPファイルをprevディレクトリにコピー
+    cp -r ./GTFS/*.zip ./GTFS/prev/
+    # GTFS直下のzipファイルは削除
+    rm ./GTFS/*.zip
 else
     # 存在しない場合
     mkdir GTFS
