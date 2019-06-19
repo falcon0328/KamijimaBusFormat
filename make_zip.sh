@@ -25,6 +25,7 @@ fi
 # 成果物のzipファイルをGTFSディレクトリにコピー
 cp ./output/*.zip ./GTFS
 # gh-pagesへpush
+git remote set-url git@github.com:falcon0328/KamijimaBusFormat.git
 git checkout gh-pages
 git add ./GTFS
 git commit -m "add GTFS.zip"
