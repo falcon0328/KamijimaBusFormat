@@ -32,4 +32,7 @@ Temporary Items
 # output
 output
 
+# python
+*.pyc
+
 # End of https://www.gitignore.io/api/macos
