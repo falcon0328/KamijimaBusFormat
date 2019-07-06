@@ -1,6 +1,7 @@
 import sys
 import os
 from gtfs import gtfs_file as gtfs
+from connection import connection as connection
 
 
 def print_message(message):
@@ -12,7 +13,10 @@ def print_error_message(message):
 
 
 if __name__ == "__main__":
+    # GTFSのファイルを管理するクラス
     gtfs = gtfs.gtfs_file()
+    # サーバ接続用インスタンス
+    connection = connection.connection()
 
     print_message("GTFSフォーマットに必要なファイルを確認します")
     if not gtfs.is_exist_files():
