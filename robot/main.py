@@ -1,6 +1,6 @@
 import sys
 import os
-from gtfs import gtfs_file
+from gtfs import gtfs_file as gtfs
 
 
 def print_message(message):
@@ -12,7 +12,7 @@ def print_error_message(message):
 
 
 if __name__ == "__main__":
-    gtfs = gtfs_file.gtfs_file()
+    gtfs = gtfs.gtfs_file()
 
     print_message("GTFSフォーマットに必要なファイルを確認します")
     if not gtfs.is_exist_files():
