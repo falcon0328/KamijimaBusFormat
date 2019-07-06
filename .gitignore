@@ -35,4 +35,7 @@ output
 # python
 *.pyc
 
+# firebase cred file
+setouchinorikae-firebase-adminsdk-qvzo7-4d9cef8686.json
+
 # End of https://www.gitignore.io/api/macos
