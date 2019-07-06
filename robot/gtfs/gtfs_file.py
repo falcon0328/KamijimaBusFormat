@@ -1,5 +1,6 @@
 import os
 import glob
+from . import gtfs_data
 
 
 class gtfs_file:
@@ -32,8 +33,10 @@ class gtfs_file:
         '''
         gtfs_files = []
         for gtfs_file in self.__gtfs_needs_files:
-            filename = path + gtfs_file + ext
-            if os.path.isfile(filename) == False:
+            filename = gtfs_file + ext
+            filepath = path + filename
+            if os.path.isfile(filepath) == False:
                 continue
-            gtfs_files.append(filename)
+            gtfs_files.append(gtfs_data.gtfs_data(
+                filename=filename, filepath=filepath))
         return gtfs_files
