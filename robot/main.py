@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import sys
 import os
 from gtfs import gtfs_file as gtfs
+from gtfs import gtfs_request_params as request_params
 from connection import connection as connection
 
 
@@ -26,5 +28,5 @@ if __name__ == "__main__":
     gtfs_files = gtfs.get_gtfs_files()
     if gtfs_files == []:
         print_error_message("必要なファイルが存在しません")
-    for filename in gtfs.get_gtfs_files():
-        print(filename)
+    for data in gtfs.get_gtfs_files():
+        request_params.RequestParams.create_params(data=data)
