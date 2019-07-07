@@ -33,8 +33,8 @@ class gtfs_file:
         '''
         gtfs_files = []
         for gtfs_file in self.__gtfs_needs_files:
-            filename = gtfs_file + ext
-            filepath = path + filename
+            filename = gtfs_file
+            filepath = path + gtfs_file + ext
             if os.path.isfile(filepath) == False:
                 continue
             gtfs_files.append(gtfs_data.gtfs_data(
