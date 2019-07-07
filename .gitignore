@@ -35,6 +35,9 @@ output
 # python
 *.pyc
 
+# pycharm
+.idea
+
 # firebase cred file
 setouchinorikae-firebase-adminsdk-qvzo7-4d9cef8686.json
 
