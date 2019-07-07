@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from gtfs import gtfs_request_params as request_params
 
 
 class connection:
@@ -19,3 +20,13 @@ class connection:
         firebase_admin.initialize_app(self.cred)
         # Firestoreに接続
         self.db = firestore.client()
+
+    def send(self, params: dict):
+        """指定されたパラメータをサーバに送信する
+
+        Arguments:
+            params {dict} -- 送信したいデータ
+        """
+        for key in params.keys():
+            for value in params[key]:
+                self.db.collection(key).document().set(value)
