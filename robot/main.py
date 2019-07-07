@@ -28,5 +28,10 @@ if __name__ == "__main__":
     gtfs_files = gtfs.get_gtfs_files()
     if gtfs_files == []:
         print_error_message("必要なファイルが存在しません")
+
     for data in gtfs.get_gtfs_files():
-        request_params.RequestParams.create_params(data=data)
+        params = request_params.RequestParams.create_params(data=data)
+        connection.send(params=params)
+        print("DONE: " + data.filepath)
+
+    print("\nデータの送信を完了しました！\n")
