@@ -22,7 +22,7 @@ class gtfs_file:
         '''
         for gtfs_file in self.__gtfs_needs_files:
             filename = path + gtfs_file + ext
-            print(filename)
+            print("OK: " + filename)
             if os.path.isfile(filename) == False:
                 return False
         return True
